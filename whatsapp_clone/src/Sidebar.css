@@ -23,6 +23,7 @@
     align-items: center;
     padding: 20px;
     border-right: 1px solid lightgray;
+    align-items: center;
 }
 
 .sidebar__searchContainer {
@@ -48,5 +49,5 @@
 .sidebar__chats {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    /* overflow: scroll; */
 }

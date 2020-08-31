@@ -3,6 +3,7 @@
     border-bottom: 1px solid #f6f6f6;
     padding: 8px;
     cursor: pointer;
+    align-items: center;
 }
 
 .sidebarchat:hover{
