@@ -1,16 +1,16 @@
-.sidebarchat{
-    display: flex;
-    border-bottom: 1px solid #f6f6f6;
-    padding: 8px;
-    cursor: pointer;
-    align-items: center;
+.sidebarchat {
+  display: flex;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 8px;
+  cursor: pointer;
+  align-items: center;
 }
 
-.sidebarchat:hover{
-    background-color: lightcyan;
+.sidebarchat:hover {
+  background-color: lightcyan;
 }
 
-.sidebarchat__info > h2{
-    font-size: 16px;
-    margin-bottom: 8px;
+.sidebarchat__info > h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
 }

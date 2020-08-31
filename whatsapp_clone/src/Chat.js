@@ -6,10 +6,26 @@ import AttachFileIcon from "@material-ui/icons/AttachFile";
 import SearchIcon from "@material-ui/icons/Search";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import MicIcon from "@material-ui/icons/Mic";
-import SendIcon from "@material-ui/icons/Send";
+import { useParams } from "react-router-dom";
+import db from "./firebase";
+
+
 function Chat() {
   const [input, setInput] = useState("");
   const [seed, setSeed] = useState("");
+  const { roomId } = useParams();
+  const [roomName, setRoomName] = useState("")
+
+  useEffect(() => {
+    if (roomId) {
+      db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
+        setRoomName(snapshot.data().roomname)
+        // console.log(snapshot.data().roomname)
+      }
+      )
+    }
+  }
+    , [roomId])
 
   const sendMessage = (event) => {
     event.preventDefault();
@@ -26,7 +42,7 @@ function Chat() {
       <div className="chat__header">
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
         <div className="chat__headerInfo">
-          <h3>Room Name</h3>
+          <h3>{roomName}</h3>
           <p>Last Seen at ...</p>
         </div>
         <div className="chat__headerRight">
