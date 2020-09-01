@@ -20,7 +20,7 @@ function Chat() {
     if (roomId) {
       db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
         setRoomName(snapshot.data().roomname)
-        // console.log(snapshot.data().roomname)
+        console.log(roomName)
       }
       )
     }

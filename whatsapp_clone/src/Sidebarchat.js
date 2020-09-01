@@ -16,7 +16,7 @@ function Sidebarchat({ id, roomname, addNewChat }) {
     const createChat = () => {
         const room_name = prompt("Enter New Room Name:");
         if (room_name) {
-            console.log(`new room ${roomname} added`);
+            console.log(`new room ${room_name} added`);
             db.collection("rooms").add({ roomname: room_name });
         }
     };

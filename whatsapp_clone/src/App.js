@@ -5,23 +5,30 @@ import Chat from './Chat';
 import './Chat.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import LoginScreen from './LoginScreen';
+import { useStateValue } from './StateProvider';
+
+
 
 function App() {
-
-  const [user, setuser] = useState(null)
-
+  // const [user, setUser] = useState(null)
+  const [{ user }, dispatch] = useStateValue()
   return (
 
-
-    <div className="app">
+    < div className="app" >
       {!user ? (
-        < LoginScreen />
+        <LoginScreen />
       ) : (
 
           <div className="app__body">
             <Router>
               <Switch>
-                <Route path="/rooms/:roomId">
+
+                <Route path='/rooms/:roomId'>
+                  <Sidebar />
+                  <Chat />
+                </Route>
+
+                <Route path="/">
                   <Sidebar />
                   <Chat />
                 </Route>
@@ -32,9 +39,7 @@ function App() {
 
         )
       }
-
-
-    </div>
+    </div >
   )
 }
 
