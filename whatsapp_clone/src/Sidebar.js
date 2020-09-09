@@ -59,6 +59,13 @@ function Sidebar() {
       </div>
 
       <div className="sidebar__chats">
+        <div className="sidebar__chat__rooms">
+          <h2>Rooms</h2>
+        </div>
+
+        <div className="sidebar__chat__users">
+          <h2>Users</h2>
+        </div>
         <Sidebarchat addNewChat />
         {rooms.map((room) => (
           <Sidebarchat
